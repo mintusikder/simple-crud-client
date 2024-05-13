@@ -1,3 +1,4 @@
+import { json } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -8,6 +9,21 @@ function App() {
     const email = form.email.value;
     const user = { name, email };
     console.log(user);
+    fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: {
+        "Content-type" : "application/json"
+      },
+      body: JSON.stringify(user)
+    })
+
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data)
+    })
+
+
+
   };
   return (
     <>
