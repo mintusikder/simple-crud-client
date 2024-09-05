@@ -19,7 +19,7 @@ function App() {
         console.log(data);
         if (data.insertedId) {
           alert("added success");
-          form.reset()
+          form.reset();
         }
       });
   };
